@@ -1,8 +1,28 @@
+######### 1. Implement a Kohonen network #########
+# See below for implementation
+
+######### 2. Train a 10x10 network over 100 iterations #########
+# Training 10x10 for 100 iterations takes about 1 second.
+# The map looks like a grid of random colors which are unorganised
+# When we increase the iterations to 200 and 500 the colors become more and more similar to their neighbours
+# For visuals, see the png files of respective runs.
+
+######### 3. Train a 100x100 network over 1000 iterations #########
+# Ways to speed up:
+# 1. Use spatial access methods like k-d tree or R tree to more efficiently access neighbouring nodes
+# 2. Start search BMU at node with expected lowest distance (save last winner for specific input vectors and start
+#    from there) and early quit distance calculation when sum is over current lowest value
+#    (most improvement seen in high dimensional vectors)
+# 3. Use a compiled programming language (i.e. Cython)
+# After 1000 iterations the 100x100 network looks a lot smoother than the 10x10 (to be expected),
+# But a lot of individual pixels can still be recognised (especially in the center of the matrix).
+# It is only after 1500 - 2000 iterations that the image becomes truly smooth.
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Problem might occur with subtracting vectors since they are 3 dimensional.
-np.random.seed(1)  # Set seed of random generator to get same outcome each time
+np.random.seed(4)  # Set seed of random generator to get same outcome each time
 
 
 class Node:
@@ -13,7 +33,7 @@ class Node:
         self.y = y
 
     def build_weight_vector(self):
-        return np.random.random((self.weight_vector_size, 3))  # initialize random weights (with 3 dimensions for color)
+        return np.random.random(self.weight_vector_size)  # initialize random weights
 
     def calculate_node_euclidian_distance(self, bmu):
         return np.sqrt(np.square(self.x - bmu.x) + np.square(self.y - bmu.y))
@@ -27,11 +47,10 @@ class Node:
         self.weight_vector += learning_rate * influence * (input_vector - self.weight_vector)
 
 
-
 class KohonenNetwork:
-    def __init__(self, matrix_width, matrix_height, input_vector, max_iterations):
-        self.input_vector = input_vector
-        self.input_vector_size = input_vector.shape[0]  # first number is length of vector
+    def __init__(self, matrix_width, matrix_height, training_data, max_iterations):
+        self.training_data = training_data
+        self.input_vector_size = training_data.shape[1]  # first number is length of vector
         self.matrix_width = matrix_width
         self.matrix_height = matrix_height
         self.max_iterations = max_iterations
@@ -43,14 +62,16 @@ class KohonenNetwork:
         self.a0 = 0.1  # Initialize learning_rate_0
 
     def run(self):
-        current_input_vector = self.input_vector
+        training_data_index = 0  # To enumerate through training data instances
         for t in range(self.max_iterations):  # Step 2
+            current_input_vector = self.training_data[training_data_index]
             bmu = self.get_bmu_node(current_input_vector)  # Step 3
             radius = self.calculate_radius(t)
             learning_rate = self.calculate_learning_rate(t)
             in_range_nodes = self.get_in_range_nodes(bmu, radius)  # Step 4
             for node in in_range_nodes:
                 node.update_weights(current_input_vector, learning_rate, bmu, radius)  # Step 5
+            training_data_index = (training_data_index + 1) % self.training_data.shape[0]  # Wrap around if necessary
         self.visualise()
 
     def create_node_matrix(self):
@@ -82,8 +103,17 @@ class KohonenNetwork:
         return in_range_nodes
 
     def visualise(self):
-        plt.plot(self.node_matrix)
+        plt.imshow(self.build_color_matrix(self.node_matrix))
         plt.show()
+
+    @staticmethod
+    def build_color_matrix(node_matrix):
+        # Create color matrix of node-matrix shape with 3 dimensional colors
+        color_matrix = np.zeros(node_matrix.shape + (3,))
+        for x in range(node_matrix.shape[0]):
+            for y in range(node_matrix.shape[1]):
+                color_matrix[x][y] = node_matrix[x][y].weight_vector
+        return color_matrix
 
     @staticmethod
     def calculate_vector_euclidian_distance(input_vector, compare_vector):
@@ -94,5 +124,7 @@ class KohonenNetwork:
         return np.sqrt(squared_distance)
 
 
-input_data = np.random.random((20, 3))
-KohonenNetwork(10, 10, input_data, 100).run()
+training_data = np.random.random((20, 3))
+network = KohonenNetwork(100, 100, training_data, 2000)
+network.visualise()  # visualise begin state
+network.run()  # Run Kohonen algorithm and show result
