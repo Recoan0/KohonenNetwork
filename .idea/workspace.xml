@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6f4ed98-7946-4f6e-bf88-7349830c5b85" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ColorMatrix_100x100_1000iterations.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ColorMatrix_100x100_1500iterations.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ColorMatrix_100x100_2000iterations.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ColorMatrix_10x10_100iterations.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ColorMatrix_10x10_200iterations.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ColorMatrix_10x10_500iterations.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/dustin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/dustin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kohonen_vectorized.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kohonen.py" beforeDir="false" afterPath="$PROJECT_DIR$/kohonen.py" afterDir="false" />
     </list>
@@ -86,7 +80,8 @@
       <option name="presentableId" value="Default" />
       <updated>1570009559474</updated>
       <workItem from="1570009560546" duration="13351000" />
-      <workItem from="1570079631950" duration="16468000" />
+      <workItem from="1570079631950" duration="17381000" />
+      <workItem from="1572178355036" duration="1349000" />
     </task>
     <servers />
   </component>
@@ -107,6 +102,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/KohonenNetwork$kohonen.coverage" NAME="kohonen Coverage Results" MODIFIED="1570102502841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KohonenNetwork$kohonen.coverage" NAME="kohonen Coverage Results" MODIFIED="1572178587215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

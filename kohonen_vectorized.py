@@ -1,29 +1,8 @@
-######### 1. Implement a Kohonen network #########
-# See below for implementation
-
-######### 2. Train a 10x10 network over 100 iterations #########
-# Training 10x10 for 100 iterations takes about 1 second.
-# The map looks like a grid of random colors which are unorganised
-# When we increase the iterations to 200 and 500 the colors become more and more similar to their neighbours
-# For visuals, see the png files of respective runs.
-
-######### 3. Train a 100x100 network over 1000 iterations #########
-# Ways to speed up:
-# 1. Use spatial access methods like k-d tree or R tree to more efficiently access neighbouring nodes
-# 2. Start search BMU at node with expected lowest distance (save last winner for specific input vectors and start
-#    from there) and early quit distance calculation when sum is over current lowest value
-#    (most improvement seen in high dimensional vectors)
-# 3. Use a compiled programming language (i.e. Cython)
-# After 1000 iterations the 100x100 network looks a lot smoother than the 10x10 (to be expected),
-# But a lot of individual pixels can still be recognised (especially in the center of the matrix).
-# It is only after 1500 - 2000 iterations that the image becomes truly smooth.
-
-# 100x100 for 2000 iterations takes 182.651 seconds
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 import time
+
+# Improve by using numpy parallel functions, masks and matrix (element wise or not) multiplications to update weights
 
 np.random.seed(4)  # Set seed of random generator to get same outcome each time
 
@@ -120,11 +99,7 @@ class KohonenNetwork:
 
     @staticmethod
     def calculate_vector_euclidian_distance(input_vector, compare_vector):
-        squared_distance = 0
-        for i in range(input_vector.shape[0]):
-            # Add square of each vector element difference
-            squared_distance += np.square(input_vector[i] - compare_vector[i])
-        return np.sqrt(squared_distance)
+        return np.squeeze(np.sqrt(np.sum(np.square(input_vector - compare_vector))))
 
 
 begin_time = time.time()
