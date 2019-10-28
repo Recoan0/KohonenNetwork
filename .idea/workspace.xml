@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6f4ed98-7946-4f6e-bf88-7349830c5b85" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kohonen.py" beforeDir="false" afterPath="$PROJECT_DIR$/kohonen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kohonen_vectorized.py" beforeDir="false" afterPath="$PROJECT_DIR$/kohonen_vectorized.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ColorMatrix_100x100_1000iterations.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ColorMatrix_100x100_1500iterations.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ColorMatrix_100x100_2000iterations.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ColorMatrix_10x10_100iterations.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ColorMatrix_10x10_200iterations.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ColorMatrix_10x10_500iterations.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +110,7 @@
       <workItem from="1570009560546" duration="13351000" />
       <workItem from="1570079631950" duration="17381000" />
       <workItem from="1572178355036" duration="1349000" />
-      <workItem from="1572214773912" duration="14908000" />
+      <workItem from="1572214773912" duration="16318000" />
     </task>
     <servers />
   </component>
