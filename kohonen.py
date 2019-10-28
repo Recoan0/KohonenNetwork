@@ -1,29 +1,9 @@
-######### 1. Implement a Kohonen network #########
-# See below for implementation
-
-######### 2. Train a 10x10 network over 100 iterations #########
-# Training 10x10 for 100 iterations takes about 1 second.
-# The map looks like a grid of random colors which are unorganised
-# When we increase the iterations to 200 and 500 the colors become more and more similar to their neighbours
-# For visuals, see the png files of respective runs.
-
-######### 3. Train a 100x100 network over 1000 iterations #########
-# Ways to speed up:
-# 1. Use spatial access methods like k-d tree or R tree to more efficiently access neighbouring nodes
-# 2. Start search BMU at node with expected lowest distance (save last winner for specific input vectors and start
-#    from there) and early quit distance calculation when sum is over current lowest value
-#    (most improvement seen in high dimensional vectors)
-# 3. Use a compiled programming language (i.e. Cython)
-# After 1000 iterations the 100x100 network looks a lot smoother than the 10x10 (to be expected),
-# But a lot of individual pixels can still be recognised (especially in the center of the matrix).
-# It is only after 1500 - 2000 iterations that the image becomes truly smooth.
-
-# 100x100 for 2000 iterations takes 182.651 seconds
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 import time
+
+# 100x100 for 1000 iterations takes 149.263 seconds
+# 100x100 for 2000 iterations takes 182.651 seconds
 
 np.random.seed(4)  # Set seed of random generator to get same outcome each time
 
@@ -129,7 +109,7 @@ class KohonenNetwork:
 
 begin_time = time.time()
 training_data = np.random.random((20, 3))
-network = KohonenNetwork(100, 100, training_data, 2000)
+network = KohonenNetwork(100, 100, training_data, 1000)
 network.visualise()  # visualise begin state
 network.run()  # Run Kohonen algorithm and show result
 print(time.time() - begin_time)

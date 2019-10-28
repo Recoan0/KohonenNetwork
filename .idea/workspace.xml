@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6f4ed98-7946-4f6e-bf88-7349830c5b85" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/kohonen_vectorized.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kohonen.py" beforeDir="false" afterPath="$PROJECT_DIR$/kohonen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kohonen_vectorized.py" beforeDir="false" afterPath="$PROJECT_DIR$/kohonen_vectorized.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +40,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.kohonen_vectorized">
     <configuration name="kohonen" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="KohonenNetwork" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -63,8 +63,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="kohonen_vectorized" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="KohonenNetwork" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/kohonen_vectorized.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.kohonen_vectorized" />
         <item itemvalue="Python.kohonen" />
       </list>
     </recent_temporary>
@@ -82,6 +105,7 @@
       <workItem from="1570009560546" duration="13351000" />
       <workItem from="1570079631950" duration="17381000" />
       <workItem from="1572178355036" duration="1349000" />
+      <workItem from="1572214773912" duration="14908000" />
     </task>
     <servers />
   </component>
@@ -102,6 +126,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/KohonenNetwork$kohonen.coverage" NAME="kohonen Coverage Results" MODIFIED="1572178587215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KohonenNetwork$kohonen_vectorized.coverage" NAME="kohonen_vectorized Coverage Results" MODIFIED="1572231871555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KohonenNetwork$kohonen.coverage" NAME="kohonen Coverage Results" MODIFIED="1572229949317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
